@@ -1,0 +1,456 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 { font-family: sans-serif; font-size: 2.5rem;}
+h2 { font-family: sans-serif; font-size: 2em;}
+p { font-family: verdana; font-size: 1.25em;}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #636262; */
+    background-image: url(../assets/img/Dani_sin\ fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
+    padding: 0 ;
+}
+
+.secciones {
+    /* background-color: #363636; */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+nav {
+    border: 3px solid #ffffff1d;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+nav ul li a.active {
+    background-color: #5858585d;
+    border-radius: 5px;
+}
+
+/************************************************************** ASIDE ***************************************************/
+.sidebar {
+    margin-bottom: 15px;
+    text-align: center;
+    max-height: 80vh;
+    overflow: hidden;
+    padding: 5em;
+    height: 80vh;
+    transition: all 2s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  
+  .sidebar-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    height: fit-content;
+    margin-bottom: 50px;
+  }
+
+  .avatar-box img {
+    width: 180px;
+    border-radius: 30%;
+    padding: 1em;
+  }
+  
+  
+  .contacts-list {
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  li {
+    list-style: none;
+  }
+  
+
+  
+  
+
+/******************************************* MAIN *******************************************************/
+main {
+    padding: 2rem;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    border: 3px solid #6867671d;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.info_container {
+    text-align: center;
+    padding: 5em;
+}
+
+/**************************** REDES SOCIALES ***************************/
+
+.contacts-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.contact-item {
+    position: relative;
+    margin: 0 10px;
+}
+
+.contact-item a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #000000;
+    background-color: #4d4d4d;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-item a:hover{
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.contact-item a svg {
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+}
+
+.contact-item a:hover{
+    color: #fff;
+}
+
+.contact-item a .filled {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.4s ease-in-out;
+}
+
+.contact-item a:hover .filled {
+    height: 100%;
+}
+
+.contact-item a[data-social="instagram"] .filled,
+.contact-item a[data-social="instagram"] ~ .tooltip::before {
+    background: linear-gradient(
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+    );
+}
+
+.contact-item a[data-social="youtube"] .filled,
+.contact-item a[data-social="youtube"] ~ .tooltip::before {
+    background-color: #ff0000;
+}
+
+.contact-item a[data-social="linkedin"] .filled,
+.contact-item a[data-social="linkedin"] ~ .tooltip::before {
+  background-color: #0274b3;
+}
+
+.contact-item a[data-social="github"] .filled,
+.contact-item a[data-social="github"] ~ .tooltip::before {
+  background-color: #24262a;
+}
+
+.contact-item a[data-social="whatsapp"] .filled,
+.contact-item a[data-social="whatsapp"] ~ .tooltip::before {
+  background-color: #32a838;
+}
+
+.contact-item a[data-social="facebook"] .filled,
+.contact-item a[data-social="facebook"] ~ .tooltip::before {
+  background-color: #4150da;
+}
+
+.contacts-list .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.4s ease;
+}
+
+.contacts-list .tooltip::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    transition: height 0.4s ease-in-out;
+}
+
+.contact-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.contact-item:hover .tooltip::before {
+    height: 100%;
+}
+
+/************************************ GALERIA ************************************/
+
+/* Galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1);
+}
+
+/* Modal para la imagen en pantalla completa */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+#close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+#prev-btn {
+    left: 20px;
+}
+
+#next-btn {
+    right: 20px;
+}
+
+/******************************* VIDEO *****************************/
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video {
+    margin: 20px;
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+    border-radius: 5%;
+}
+
+/* Responsive */
+
+@media (max-width: 1152px) {
+    body {
+        background-image: url(../assets/img/Daniel_sin_fondo.jpg);
+    }
+
+    .sidebar{
+        justify-content: center;
+        align-items: end;
+    }
+    .contacts-list {
+       justify-content: space-between;
+       align-items: end;
+    }
+    
+}
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .sidebar-info{
+        flex-direction: column;
+    }
+}
+
+/* Media queries para pantallas menores de 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección a columna en móviles */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Añade espacio entre los elementos de navegación */
+    }
+
+    .main-image {
+        width: 100%; /* Imagen principal más grande en pantallas pequeñas */
+    }
+
+    .thumbnail-container {
+        gap: 10px; /* Reduce el espacio entre miniaturas en pantallas pequeñas */
+    }
+
+    .thumbnail-container img {
+        width: 80px;
+        height: 80px; /* Miniaturas más pequeñas en móviles */
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    /* Ajustes más específicos para móviles pequeños */
+    body {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .main-image img {
+        border-radius: 5px; /* Menor redondeado en pantallas pequeñas */
+    }
+
+    nav ul li a {
+        padding: 8px; /* Reduce el padding en los enlaces de navegación */
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .gallery-container {
+        width: 100%;
+    }
+    
+}
